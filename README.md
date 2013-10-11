@@ -37,3 +37,8 @@ Then, the only thing you need to do is setup the database using a local config f
     ./vendor/bin/doctrine-module orm:validate-schema
     ./vendor/bin/doctrine-module orm:schema-tool:create
     
+The last step that you need to do is to create the default roles :
+
+    INSERT INTO `role`(`parent_id`, `roleId`) VALUES (NULL, 'guest');
+    INSERT INTO `role`(`parent_id`, `roleId`) VALUES (NULL, 'user');
+    INSERT INTO `role`(`parent_id`, `roleId`) VALUES (2, 'admin');
